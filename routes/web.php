@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +20,7 @@ Route::get('/', function () {
 });
 
 
+// Route::get('/projects', [ProjectController::class, 'show']);
+// Resource route follows the created file path according to the paths and methods from controller
+
+Route::resource('projects', ProjectController::class);
