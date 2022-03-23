@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('description',255)->nullable();
             $table->string('status',255)->nullable();
             $table->decimal('price', 22)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

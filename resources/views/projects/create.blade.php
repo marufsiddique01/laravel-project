@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Product</h2>
+                <h2>Add New Product</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
@@ -22,37 +22,33 @@
             </ul>
         </div>
     @endif
-
-    <form action="{{ route('projects.update', $project->id) }}" method="POST">
+    <form action="{{ route('projects.store') }}" method="POST" >
         @csrf
-        @method('PUT')
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $project->name }}" class="form-control" placeholder="Name">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea class="form-control" style="height:50px" name="introduction"
-                        placeholder="Introduction">{{ $project->description }}</textarea>
+                    <textarea class="form-control" style="height:50px" name="description"
+                        placeholder="Description"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status:</strong>
-                    <input type="text" name="status" class="form-control" placeholder="{{ $project->status }}"
-                        value="{{ $project->status }}">
+                    <input type="text" name="status" class="form-control" placeholder="Status">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price:</strong>
-                    <input type="number" name="price" class="form-control" placeholder="{{ $project->price }}"
-                        value="{{ $project->price }}">
+                    <input type="number" name="price" class="form-control" placeholder="Price">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

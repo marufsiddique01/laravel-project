@@ -26,9 +26,6 @@ class Project extends Model
         'status',
         'price',
         'created_at'
-    ]
-    
-
-
+    ];
 
 }
